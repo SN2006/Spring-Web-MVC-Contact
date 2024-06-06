@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="book_update" class="container-sm">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="card p-5 m-5">
+            <h4 class="text-center mb-3 mt-3 text-warning">Update Contact</h4>
+            <form th:object="${contact}" th:action="@{/change-contact}" method="post">
+                <div>
+                    <input type="hidden" name="id" class="form-control" th:field="*{id}">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            name="name"
+                            th:field="*{name}"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="surname" class="form-label">Surname</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="surname"
+                            name="surname"
+                            th:field="*{surname}"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="phone">Phone</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="phone"
+                            name="phone"
+                            th:field="*{phone}"
+                    />
+                </div>
+                <div class="container text-center mb-4"><br>
+                    <a th:href="@{/contacts}" class="btn btn-outline-primary btn-sm">Back</a>
+                    &nbsp;&nbsp;
+                    <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="contact_list" class="container-sm">
+    <div class="d-flex flex-column justify-content-around align-items-center">
+        <div>
+            <a th:href="@{/create-contact}" class="btn btn-primary btn-lg m-5">
+                <i class="bi bi-plus-lg"></i> Add Contact</a><br>
+        </div>
+        <table class="table table-bordered table-dark p-3">
+            <thead>
+            <tr class="table-light">
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody th:each="contact : ${contacts}">
+            <tr>
+                <td th:text="${contact.id}"></td>
+                <td th:text="${contact.name}"></td>
+                <td th:text="${contact.surname}"></td>
+                <td th:text="${contact.phone}"></td>
+                <td>
+                    <a class="btn btn-warning btn-sm"
+                       th:href="@{/update-contact/{id}(id=${contact.id})}"
+                       role="button">Update</a>
+                    &nbsp;&nbsp;
+                    <a class="btn btn-danger btn-sm"
+                       th:href="@{/delete-contact/{id}(id=${contact.id})}"
+                       role="button">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

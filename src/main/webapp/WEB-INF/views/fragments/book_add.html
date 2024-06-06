@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="book_add" class="container-sm">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="card p-5 m-5">
+            <h4 class="text-center mb-3 mt-3 text-warning">Add Contact</h4>
+            <form th:action="@{/add-contact}" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            name="name"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="surname" class="form-label">Surname</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="surname"
+                            name="surname"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="phone">Phone</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="phone"
+                            name="phone"
+                    />
+                </div>
+                <div class="container text-center mb-4"><br>
+                    <a th:href="@{/contacts}" class="btn btn-outline-primary btn-sm">Back</a>
+                    &nbsp;&nbsp;
+                    <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
