@@ -32,7 +32,7 @@ public class ContactController {
     @RequestMapping("/create-contact")
     public String createContact(Model model) {
         model.addAttribute("title", "Add Contact");
-        model.addAttribute("fragmentName", "book_add");
+        model.addAttribute("fragmentName", "contact_add");
         return "layout";
     }
 
@@ -41,7 +41,7 @@ public class ContactController {
         model.addAttribute("title", "Update Contact");
         Contact contact = contactService.fetchById(id);
         model.addAttribute("contact", contact);
-        model.addAttribute("fragmentName", "book_update");
+        model.addAttribute("fragmentName", "contact_update");
         return "layout";
     }
 
